@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Portfolio website of Ashley Arciniega - UI/UX Designer & Frontend Developer. Recent Michigan State University graduate showcasing design and development projects.">
+  <title>Ashley Arciniega's personal page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/chat.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/login.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/piano.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/resume.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/projects.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/illustrations.css') }}">
+  {% block extracss %}{% endblock %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" defer></script>
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/chat.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/piano.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/login.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <!-- The navigation bar -->
+    <nav class="nav-bar">
+      <div class="nav-content">  
+          <p class="ash">Ashley Arciniega</p>
+          <br>
+          <ul class="links desktop">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a href="/illustrations">Illustrations</a></li>
+              <li><a href="/resume">Resume</a></li>
+              <li>
+                  <a href="https://www.linkedin.com/in/ashley-arciniega" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile (opens in new tab)">
+                      <img class="linkedin-icon" src="../static/main/images/social-linkedin.png" alt="LinkedIn logo" loading="lazy">
+                      <span class="linkedin-text">LinkedIn</span>
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div class="page-br"></div>
+      <img class="menu-icon" src="../static/main/images/menu-bar.png" alt="Menu" onclick="toggleMenu()" loading="lazy">
+      <ul class="links mobile">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/illustrations">Illustrations</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li>
+              <a href="https://www.linkedin.com/in/ashley-arciniega" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile (opens in new tab)">
+                  <span class="linkedin-text">LinkedIn</span>
+              </a>
+          </li>
+      </ul>
+    </nav>
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- The footer of the file -->
+    <footer class = "foot">
+        <p>Design + Development by Ashley Arciniega</p>
+        <p>Built with React, Flask, Docker • Deployed on Google Cloud Platform</p>
+        <p><small>©2025 Ashley Arciniega | Contact: arcinie3@msu.edu</small></p>
+        <br>
+        <p><small>Personal portfolio website. No user data collected or stored.</small></p>
+    </footer>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

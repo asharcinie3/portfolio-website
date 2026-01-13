@@ -1,0 +1,118 @@
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar {
+    color: #222;
+    padding: 2rem 4rem;
+    position: relative;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    height: 1.875rem;
+    width: auto;
+    position: absolute;
+    right: 1.25rem;
+    top: 2.5rem;
+}
+
+.links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.links.desktop {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links.desktop li {
+    margin-left: 1.25rem;
+}
+
+.links.mobile {
+    display: none;
+}
+
+.links a {
+    text-decoration: none;
+    color: #222;
+}
+
+.linkedin-icon {
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+}
+
+.linkedin-text {
+    display: none;
+}
+
+.page-br{
+    height: .25rem;
+    margin-bottom: 0rem;
+}
+
+@media screen and (max-width: 40.625rem) {
+    .nav-bar {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .links.desktop {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .links.mobile {
+        display: none;
+        position: absolute;
+        top: calc(100% - 1px);
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        border-top: .1rem solid #173d55;
+    }
+
+    .links.mobile.show {
+        display: block;
+    }
+
+    .links.mobile li {
+        padding: 0.625rem 1.25rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .links.mobile li:last-child {
+        border-bottom: none; 
+    }
+
+    .links.mobile a {
+        color: #222; 
+        display: block;
+    }
+
+    .linkedin-icon {
+        display: none;
+    }
+
+    .linkedin-text {
+        display: inline;
+    }
+}

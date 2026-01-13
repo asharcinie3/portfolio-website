@@ -1,0 +1,144 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="resume-container">
+  
+  {# Education Section #}
+  <section class="resume-section">
+    <h2 class="section-title">Education</h2>
+    {% for inst_id, inst in resume_data.items() %}
+      {% if inst['type'] == 'education' %}
+        <div class="education-item">
+          <div class="item-header">
+            <div class="item-primary">
+              <h3 class="institution-name">{{ inst['name'] }}</h3>
+              {% if inst['department'] and inst['department'] != "NULL" %}
+                <p class="department">{{ inst['department'] }}</p>
+              {% endif %}
+            </div>
+            <div class="item-location">
+              {% if inst['city'] and inst['city'] != "NULL" %}
+                <p>{{ inst['city'] }}{% if inst['state'] and inst['state'] != "NULL" %}, {{ inst['state'] }}{% endif %}</p>
+              {% endif %}
+            </div>
+          </div>
+          
+          {% for pos_id, pos in inst['positions'].items() %}
+            <div class="degree-info">
+              <div class="degree-title">{{ pos['title'] }}</div>
+              <div class="degree-dates">
+                {% if pos['start_date'] and pos['start_date'] != "NULL" and pos['end_date'] and pos['end_date'] != "NULL" %}
+                  {{ pos['end_date'].strftime('%B %Y') if pos['end_date'] is not string else pos['end_date'] }}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  {# Work Experience Section #}
+  <section class="resume-section">
+    <h2 class="section-title">Work Experience</h2>
+    {% for inst_id, inst in resume_data.items() %}
+      {% if inst['type'] == 'work' %}
+        {% for pos_id, pos in inst['positions'].items() %}
+          <div class="work-item">
+            <div class="item-header">
+              <div class="item-primary">
+                <h3 class="position-title">{{ pos['title'] }}</h3>
+                <p class="company-name">{{ inst['name'] }}</p>
+              </div>
+              <div class="item-secondary">
+                <p class="work-dates">
+                  {% if pos['start_date'] and pos['start_date'] != "NULL" %}
+                    {{ pos['start_date'].strftime('%b %Y') if pos['start_date'] is not string else pos['start_date'] }}
+                    {% if pos['end_date'] and pos['end_date'] != "NULL" %}
+                      - {{ pos['end_date'].strftime('%b %Y') if pos['end_date'] is not string else pos['end_date'] }}
+                    {% else %}
+                      - Present
+                    {% endif %}
+                  {% endif %}
+                </p>
+                <p class="work-location">
+                  {% if inst['city'] and inst['city'] != "NULL" %}
+                    {{ inst['city'] }}{% if inst['state'] and inst['state'] != "NULL" %}, {{ inst['state'] }}{% endif %}
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+
+            {% if pos['experiences'] and pos['experiences'] != {} %}
+              <ul class="experience-list">
+                {% for exp_id, exp in pos['experiences'].items() %}
+                  <li class="experience-bullet">
+                    {{ exp['description'] }}
+                    {% if exp['skills'] and exp['skills'] != {} %}
+                      <div class="inline-skills">
+                        {% for skill_id, skill in exp['skills'].items() %}
+                          {% if skill['name'] and skill['name'] != "NULL" %}
+                            <span class="skill-tag">{{ skill['name'] }}</span>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  {# Projects Section #}
+  <section class="resume-section">
+    <h2 class="section-title">Projects</h2>
+    {% for inst_id, inst in resume_data.items() %}
+      {% if inst['type'] == 'projects' %}
+        {% for pos_id, pos in inst['positions'].items() %}
+          <div class="project-item">
+            <div class="item-header">
+              <div class="item-primary">
+                <h3 class="project-title">{{ pos['title'] }}</h3>
+                {% if pos['responsibilities'] and pos['responsibilities'] != "NULL" %}
+                  <p class="project-subtitle">{{ pos['responsibilities'] }}</p>
+                {% endif %}
+              </div>
+              <div class="item-secondary">
+                <p class="project-date">
+                  {% if pos['start_date'] != "NULL" %}
+                    {{ pos['start_date'].strftime('%Y') if pos['end_date'] is not string else pos['start_date'] }}
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+
+            {% if pos['experiences'] and pos['experiences'] != {} %}
+              <ul class="experience-list">
+                {% for exp_id, exp in pos['experiences'].items() %}
+                  <li class="experience-bullet">
+                    {{ exp['description'] }}
+                    {% if exp['skills'] and exp['skills'] != {} %}
+                      <div class="inline-skills">
+                        {% for skill_id, skill in exp['skills'].items() %}
+                          {% if skill['name'] and skill['name'] != "NULL" %}
+                            <span class="skill-tag">{{ skill['name'] }}</span>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </section>
+
+</div>
+{% endblock %}

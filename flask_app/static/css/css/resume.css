@@ -1,0 +1,228 @@
+/* Resume Container */
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #151515;
+}
+
+/* Section Styling */
+.resume-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #151515;
+  color: #151515;
+}
+
+/* Education Items */
+.education-item {
+  margin-bottom: 25px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.item-primary {
+  flex: 1;
+}
+
+.item-secondary {
+  text-align: right;
+}
+
+.institution-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #151515;
+}
+
+.department {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+
+.item-location {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.item-location p {
+  margin-top: 1.3rem;
+}
+
+.degree-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 0.95rem;
+}
+
+.degree-title {
+  font-style: italic;
+}
+
+.degree-dates {
+  color: #555;
+  margin-top: 0rem;
+}
+
+/* Work Experience Items */
+.work-item {
+  margin-bottom: 30px;
+}
+
+.position-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #151515;
+}
+
+.company-name {
+  font-size: 0.95rem;
+  font-style: italic;
+  margin: 0 0 4px 0;
+  color: #555;
+}
+
+.work-location {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: -.9rem;
+  margin-bottom: 0rem;
+}
+
+.work-dates {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1.3rem;
+}
+
+/* Project Items */
+.project-item {
+  margin-bottom: 30px;
+}
+
+.project-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #151515;
+}
+
+.project-subtitle {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0 0 4px 0;
+  color: #555;
+}
+
+.project-date {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1.2rem;
+}
+
+/* Experience List */
+.experience-list {
+  margin-top: 12px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.experience-bullet {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #151515;
+}
+
+/* Skills Tags - Matching Projects Page Style */
+.inline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: #e8f4f8;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  color: #151515;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 20px 15px;
+  }
+
+  .item-header {
+    flex-direction: column;
+  }
+
+  .item-secondary {
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .degree-info {
+    flex-direction: column;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .position-title {
+    font-size: 1rem;
+  }
+
+  .experience-bullet {
+    font-size: 0.9rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .resume-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section-title {
+    page-break-after: avoid;
+  }
+
+  .work-item,
+  .project-item,
+  .education-item {
+    page-break-inside: avoid;
+  }
+
+  .skill-tag {
+    border: 1px solid #ddd;
+    background-color: #e8f4f8;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

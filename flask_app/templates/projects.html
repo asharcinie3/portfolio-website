@@ -1,0 +1,139 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div>
+    <div class="page-intro">
+        <h1>Projects</h1>
+        <p>Each project showcases different aspects of my work—from conducting user research and designing in Figma to implementing complete frontend applications with React. I focus on creating experiences that are both visually polished and technically sound.</p>
+    </div>
+    <div class = "projects">
+        <div class="proj-card">
+            <div class = "proj-img">
+                <a><img></a>
+            </div>
+
+            <div class="proj-description">
+                    <h2>Database-Driven Resume System</h2>  
+                    <p>Designed and implemented dynamic resume page that renders content from normalized MySQL database. Created relational schema across four tables with automated CSV import system and custom Python data models that build nested dictionary structures for template rendering.</p>
+                    
+                    <div class="tech-section">
+                        <h4>Tech:</h4>  
+                        <p>Python Flask</p>
+                        <p>MySQL</p>
+                        <p>Database Design</p>
+                    </div>
+
+                    <div class="project-links">
+                        <h4>Links:</h4>
+                        <a href="/resume">View Resume</a> 
+                        <a href="">Database Schema</a>
+                        <a href="">System Architecture</a>
+                    </div>
+            </div> 
+        </div>
+        
+        <div class="proj-card">
+            <div class="proj-img">
+                <a><img src="../static/main/images/HAP.png" alt="HAP AI training platform interface screenshot" loading="lazy"></a>
+            </div>
+
+            <div class="proj-description">
+                <h2>HAP AI Training Platform</h2>     
+                <p>Led UI/UX design and frontend development for AI literacy training platform serving 1,100+ Health Alliance Plan employees. Created user personas, wireframes, and interactive prototypes, then implemented complete React/Next.js frontend with accessibility focus.</p>
+                
+                <div class="tech-section">
+                    <h4>Tech:</h4>  
+                    <p>React</p>
+                    <p>Next.js</p>
+                    <p>Figma</p>
+                    <p>User Research</p>
+                    <p>Personas and Journey Mapping</p>
+                </div>
+
+                <div class="project-links">
+                    <h4>Links:</h4>
+                    <a href="../static/main/pdf/team-hap-project-plan-document (1).pdf">Project Plan</a> 
+                    <a href="../static/main/images/HAP Prototype.png">Prototype</a> 
+                    <a href="../static/main/pdf/Pitchboard_Personas.pdf">User Personas</a>
+                </div>
+            </div> 
+        </div>
+
+        <div class="proj-card">
+            <div class="proj-img">
+                <a><img src="../static/main/images/PCAS.png" alt="PCAS pedestrian collision avoidance prototype" loading="lazy"></a>
+            </div>
+
+            <div class="proj-description">
+                <h2>PCAS Interactive Prototype</h2>   
+                <p>Built interactive prototype demonstrating autonomous vehicle safety system across 10 pedestrian scenarios. Created custom animations, synchronized video demonstrations, and real-time data visualizations of velocity and trajectory calculations for technical stakeholder presentations.</p>
+                
+                <div class="tech-section">
+                    <h4>Tech:</h4>  
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>Video Editing</p>
+                    <p>Animation</p>
+                </div>
+
+                <div class="project-links">
+                    <h4>Links:</h4>
+                    <a href="https://pcas-prototype.netlify.app/">Live Demo</a>
+                </div>
+            </div> 
+        </div>
+
+        <div class="proj-card">
+            <div class="proj-img">
+                <a><img src="../static/main/images/ridgeline.png" alt="Ski Ridgeline booking platform wireframes" loading="lazy"></a>
+            </div>
+
+            <div class="proj-description">
+                <h2>SKI Ridgeline UI/UX</h2>
+                <p>Designed complete UI/UX system for multi-platform ski resort booking experience. Conducted user research, developed information architecture, and created wireframes and high-fidelity prototypes for lift tickets, lodging reservations, and activity booking across web and mobile.</p>
+                
+                <div class="tech-section">
+                    <h4>Tech:</h4>  
+                    <p>Figma</p>
+                    <p>User Research</p>
+                    <p>Adobe Creative Suite</p>
+                </div>
+
+                <div class="project-links">
+                    <h4>Links:</h4> 
+                    <a href="../static/main/pdf/MobilePrototype.pdf">Mobile Prototype</a> 
+                    <a href="../static/main/pdf/WebPrototype.pdf">Web Prototype</a>
+                    <a href="../static/main/pdf/RidgelineWireframe.pdf">Wireframe</a>
+                </div>
+            </div> 
+        </div>
+
+        <div class="proj-card">
+            <div class="proj-img">
+                <a><img src="../static/main/images/piano.png" alt="black piano" loading="lazy"></a>
+            </div>
+
+            <div class="proj-description">
+                <h2>Interactive Piano</h2>    
+                <p>Developed responsive piano application with keyboard and mouse input, real-time audio playback, and hidden narrative elements triggered by specific note sequences. Demonstrates event-driven programming, Web Audio API integration, and creative approach to interactive storytelling.</p>  
+                
+                <div class="tech-section">
+                    <h4>Tech:</h4>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>Web Audio API</p>
+                </div>
+
+                <div class="project-links">
+                    <h4>Links:</h4>
+                    <a href="/piano">Play Demo</a>
+                </div>
+            </div> 
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
