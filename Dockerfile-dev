@@ -1,6 +1,3 @@
-# Author  : Prof. MM Ghassemi <ghassem3@msu.edu>
-# Access instance using `docker exec -it hw3-container_flask-app bash`
-
 # Instantiate Ubuntu 20.04
 FROM ubuntu:20.04
 LABEL maintainer "Mohammad Ghassemi <ghassem3@msu.edu>"

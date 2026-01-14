@@ -1,4 +1,3 @@
-# Author: Prof. MM Ghassemi <ghassem3@msu.edu>
 from flask import current_app as app
 from flask import render_template, redirect
 from .database.database  import database
@@ -58,4 +57,3 @@ def piano():
         return render_template('piano.html')
     except Exception as e:
         return str(e), 500
-    
