@@ -1,7 +1,7 @@
 # Author: Prof. MM Ghassemi <ghassem3@msu.edu>
 from flask import current_app as app
 from flask import render_template, redirect
-from .utils.database.database  import database
+from .database.database  import database
 from pprint import pprint
 import json
 import random

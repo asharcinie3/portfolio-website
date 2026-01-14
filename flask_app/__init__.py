@@ -21,7 +21,7 @@ def create_app(debug=False):
 	app.secret_key = 'AKWNF1231082fksejfOSEHFOISEHF24142124124124124iesfhsoijsopdjf'
 	# ----------------------------------------------
 
-	from .utils.database.database import database
+	from .database.database import database
 	db = database()
 	db.createTables(purge=True)
 
