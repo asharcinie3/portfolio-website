@@ -16,7 +16,7 @@ class database:
         self.is_cloud_run = os.environ.get("K_SERVICE") is not None
 
         if self.is_cloud_run:
-            self.unix_socket = "/cloudsql/YOUR_PROJECT:REGION:INSTANCE"
+            self.unix_socket = "/cloudsql/portfolio-484300:us-central1:resume-db"
         else:
             self.host = "127.0.0.1"
             self.port = 3306
