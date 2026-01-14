@@ -13,24 +13,40 @@ class database:
     def __init__(self, purge = False):
 
         # Grab information from the configuration file
+        self.is_cloud_run = os.environ.get("K_SERVICE") is not None
+
+        if self.is_cloud_run:
+            self.unix_socket = "/cloudsql/YOUR_PROJECT:REGION:INSTANCE"
+        else:
+            self.host = "127.0.0.1"
+            self.port = 3306
+
         self.database       = 'db'
-        self.host           = '127.0.0.1'
         self.user           = 'master'
-        self.port           = 3306
+    
         self.password       = 'master'
         self.tables         = ['institutions', 'positions', 'experiences', 'skills']
         
     # create connection to database
     def query(self, query = "SELECT * FROM users", parameters = None):
 
-        cnx = mysql.connector.connect(host     = self.host,
-                                      user     = self.user,
-                                      password = self.password,
-                                      port     = self.port,
-                                      database = self.database,
-                                      charset  = 'latin1'
-                                     )
-
+        if self.is_cloud_run:
+            cnx = mysql.connector.connect(
+            user=self.user,
+            password=self.password,
+            unix_socket=self.unix_socket,
+            database=self.database,
+            charset='latin1'
+            )
+        else:
+            cnx = mysql.connector.connect(
+                host=self.host,
+                user=self.user,
+                password=self.password,
+                port=self.port,
+                database=self.database,
+                charset='latin1'
+            )
 
         if parameters is not None:
             cur = cnx.cursor(dictionary=True)

@@ -23,7 +23,8 @@ def create_app(debug=False):
 
 	from .database.database import database
 	db = database()
-	db.createTables(purge=True)
+	
+	if os.environ.get("FLASK_ENV") != "production": db.createTables(purge=True)
 
 	socketio.init_app(app)
 
