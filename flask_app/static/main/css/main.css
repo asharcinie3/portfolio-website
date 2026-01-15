@@ -25,7 +25,7 @@ h2 {
     max-height: 75vh;
     max-width: 90vw;
     overflow: hidden; 
-    margin: 1.25rem;
+    margin: 1rem;
 }
 
 .scroll {
@@ -90,6 +90,7 @@ ul {
 
 
 
+
 /* Transition to single column layout for smaller screens */
 @media screen and (max-width: 40.625rem) {
     .info {
@@ -102,8 +103,8 @@ ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 80%;
         max-height: none;
+        width: 90%;
     }
 
     .col-1 {
