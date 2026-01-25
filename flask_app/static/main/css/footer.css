@@ -13,6 +13,17 @@
     margin-top: 1rem;
 }
 
+.dev-link:link,
+.dev-link:visited,
+.dev-link:active {
+    color: white;
+}
+
+.dev-link:hover {
+    font-weight:600;
+}
+
+
 @media (max-width: 768px) {
    .foot {
     padding: 1rem;
